@@ -38,6 +38,7 @@
             terminalPanel = new RichTextBox();
             processButton = new Button();
             energyField = new TextBox();
+            invertSelect = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)picturePreview).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBase).BeginInit();
             SuspendLayout();
@@ -132,17 +133,29 @@
             // 
             // energyField
             // 
-            energyField.Location = new Point(787, 574);
+            energyField.Location = new Point(849, 574);
             energyField.Name = "energyField";
-            energyField.Size = new Size(202, 23);
+            energyField.Size = new Size(140, 23);
             energyField.TabIndex = 12;
             energyField.TextChanged += EnergyField_TextChanged;
+            // 
+            // invertSelect
+            // 
+            invertSelect.AutoSize = true;
+            invertSelect.Location = new Point(787, 576);
+            invertSelect.Name = "invertSelect";
+            invertSelect.Size = new Size(56, 19);
+            invertSelect.TabIndex = 13;
+            invertSelect.Text = "Invert";
+            invertSelect.UseVisualStyleBackColor = true;
+            invertSelect.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // Base_Window
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1082, 610);
+            Controls.Add(invertSelect);
             Controls.Add(energyField);
             Controls.Add(processButton);
             Controls.Add(terminalPanel);
@@ -175,5 +188,6 @@
         public RichTextBox terminalPanel;
         private Button processButton;
         private TextBox energyField;
+        private CheckBox invertSelect;
     }
 }

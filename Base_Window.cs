@@ -10,6 +10,7 @@ namespace Catprinter
         Bitmap processedImg = null;
         int energy = 0xffff;
         String dithering = "Floyd-Steinberg";
+        bool invert = false;
 
         public Base_Window()
         {
@@ -74,7 +75,7 @@ namespace Catprinter
             terminalPanel.Invoke((Action)(() => terminalPanel.AppendText("\nProcessing Image...")));
             try
             {
-                processedImg = ImageProcessing.ReadImg("in.jpg", PrinterCommands.PRINT_WIDTH, dithering);
+                processedImg = ImageProcessing.ReadImg("in.jpg", PrinterCommands.PRINT_WIDTH, dithering, invert);
             }
             catch (InvalidOperationException exc)
             {
@@ -157,6 +158,7 @@ namespace Catprinter
 
             terminalPanel.Invoke((Action)(() => terminalPanel.AppendText("\nConnection closed")));
             progressBar1.Invoke((Action)(() => progressBar1.Value = 0));
+            terminalPanel.Invoke((Action)(() => terminalPanel.Clear()));
         }
         private async void ButtonLoadImg_Click(object sender, EventArgs e)
         {
@@ -206,6 +208,20 @@ namespace Catprinter
                 resized = new Bitmap(img, new Size((int)(width * factor), (int)(height * factor)));
             }
             pictureBox.Image = resized;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (invertSelect.Checked)
+            {
+                invert = true;
+                terminalPanel.AppendText("\nInvert: True");
+            }
+            else
+            {
+                invert = false;
+                terminalPanel.AppendText("\nInvert: False");
+            }
         }
     }
 }
