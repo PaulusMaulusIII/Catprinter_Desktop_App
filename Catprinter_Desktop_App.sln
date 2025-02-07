@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catprinter_Desktop_App", "Catprinter_Desktop_App.csproj", "{CAB50378-178C-4BBF-8864-FD584AC88A39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catprinter_Console_App", "..\..\C_Sharp\Catprinter_Console_App\Catprinter_Console_App.csproj", "{E8C1B1B6-62B2-4092-A419-E23B26AED239}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catprinter_Lib", "..\..\C_Sharp\Catprinter_Lib\Catprinter_Lib.csproj", "{00C28030-06A0-415D-A217-BA15AE3B20BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{CAB50378-178C-4BBF-8864-FD584AC88A39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAB50378-178C-4BBF-8864-FD584AC88A39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAB50378-178C-4BBF-8864-FD584AC88A39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8C1B1B6-62B2-4092-A419-E23B26AED239}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8C1B1B6-62B2-4092-A419-E23B26AED239}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8C1B1B6-62B2-4092-A419-E23B26AED239}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8C1B1B6-62B2-4092-A419-E23B26AED239}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00C28030-06A0-415D-A217-BA15AE3B20BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00C28030-06A0-415D-A217-BA15AE3B20BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00C28030-06A0-415D-A217-BA15AE3B20BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00C28030-06A0-415D-A217-BA15AE3B20BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
