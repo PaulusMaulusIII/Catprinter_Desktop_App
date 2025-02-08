@@ -35,7 +35,7 @@
             pictureBase = new PictureBox();
             buttonLoadImg = new Button();
             progressBar1 = new ProgressBar();
-            terminalPanel = new RichTextBox();
+            terminalPanel = new Terminal();
             processButton = new Button();
             energyField = new TextBox();
             invertSelect = new CheckBox();
@@ -185,7 +185,7 @@
         public PictureBox pictureBase;
         public Button buttonLoadImg;
         public ProgressBar progressBar1;
-        public RichTextBox terminalPanel;
+        public Terminal terminalPanel;
         private Button processButton;
         private TextBox energyField;
         private CheckBox invertSelect;

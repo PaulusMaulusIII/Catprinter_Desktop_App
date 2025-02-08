@@ -11,6 +11,7 @@ namespace Catprinter
         int energy = 0xffff;
         String dithering = "Floyd-Steinberg";
         bool invert = false;
+        private const int MAX_LINES = 38;
 
         public Base_Window()
         {
@@ -158,7 +159,6 @@ namespace Catprinter
 
             terminalPanel.Invoke((Action)(() => terminalPanel.AppendText("\nConnection closed")));
             progressBar1.Invoke((Action)(() => progressBar1.Value = 0));
-            terminalPanel.Invoke((Action)(() => terminalPanel.Clear()));
         }
         private async void ButtonLoadImg_Click(object sender, EventArgs e)
         {
@@ -221,6 +221,23 @@ namespace Catprinter
             {
                 invert = false;
                 terminalPanel.AppendText("\nInvert: False");
+            }
+        }
+
+        public class Terminal : RichTextBox
+        {
+            public new void AppendText(string text)
+            {
+                if (this.InvokeRequired)
+                {
+                    if (this.Lines.Length >=  MAX_LINES)
+                    {
+                        this.Invoke(new Action(() => this.Clear()));
+                    }
+                    this.Invoke(new Action<string>(AppendText), new object[] { text });
+                    return;
+                }
+                base.AppendText(text);
             }
         }
     }
